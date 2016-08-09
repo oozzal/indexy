@@ -1,0 +1,28 @@
+- if notice.present?
+  p#notice.alert.alert-warning = notice
+
+h1.row
+  .col-md-4
+    .row
+      .col-xs-8 Indexy
+      .col-xs-4
+        button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newWebPage" New Web Page
+.row
+  .col-md-4
+    .list-group
+      - @web_pages.each do |web_page|
+        = link_to web_page_path(web_page, page: params[:page]), class: "list-group-item #{'active' if web_page == @web_page}" do
+          h4.list-group-item-heading = web_page.title
+          p.list-group-item-text = web_page.url
+  .col-md-8
+    = render 'show', web_page: @web_page
+
+= paginate @web_pages
+
+#newWebPage.modal.fade role="dialog"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        - new_web_page = WebPage.new
+        = form_for new_web_page do |f|
+          = render 'form', web_page: new_web_page, f: f

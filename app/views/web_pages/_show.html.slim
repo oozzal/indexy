@@ -1,0 +1,12 @@
+- if web_page.present?
+  h1 = web_page.title
+  h3 = link_to web_page.url, web_page.url, target: '_blank'
+  h2 Headings
+  ul
+    - web_page.headings.each do |heading|
+      li #{heading.heading_type} : #{heading.content}
+
+  h2 Links
+  ul
+    - web_page.links.each do |link|
+      li #{link.content} : #{link.href}
