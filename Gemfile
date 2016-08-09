@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -30,7 +30,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'httparty'
+gem 'nokogiri'
+
+gem 'slim-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails'
+gem 'kaminari'
+
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-nav'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
