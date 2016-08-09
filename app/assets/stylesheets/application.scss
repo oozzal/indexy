@@ -1,0 +1,6 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+$border-radius-base: 0px !default;
+@import "bootstrap";
+@import "font-awesome";
+@import "web_pages";
